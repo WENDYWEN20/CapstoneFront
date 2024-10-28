@@ -1,22 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from "react";
 import PropTypes from "prop-types";
 
-function ProductCart({ product }) {
+export default function ProductCart() {
   const [cart, setCart] = useState([]);
 
-  const handleAddToCart = () => {
-    setCart([...cart, product]);
-  };
+  useEffect(() => {
+    const fetchCart = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/carts`);
+        const cartData=await response.json()
+      } catch (error) {
+        console.error("No products in cart:", error);
+      }
+      console.log(cartData);
+      setCart(cartData)
+    };
+    fetchCart();
+  }, []);
 
   return (
     <div>
-      <h2>{product.name}</h2>
-      <p>{product.price}</p>
-      <form action="">
-      <button onClick={handleAddToCart}>Add to Cart</button>
-      </form>
-    </div>
+      <button>Add to Cart</button>
+      </div>
   );
 }
-
-export default ProductCart;
