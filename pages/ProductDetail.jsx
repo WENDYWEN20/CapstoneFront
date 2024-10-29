@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import Cart from "../pages/CartCheckOut"
-function Detail({ product}) {
 
+import { CartContext } from '../pages/CartContext.jsx';
+
+function Detail({ product}) {
+  const { addToCart} = useContext(CartContext);
 
   return (
-    <div>
+    <div key={product._id}>
       <img src={product.images} />
-      <h2>{product.name}</h2>
+      <Link key={product._id} to={`/products/${product._id}`}> {product.name}</Link>
       <p>Price: ${product.price}</p>
-      <button className="bg-amber-300">Add to Cart</button>
+      <button onClick={() => addToCart(product)}> <strong>Add to Cart</strong></button>
        </div>
 
   );

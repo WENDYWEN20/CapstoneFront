@@ -1,4 +1,4 @@
-import {Routes, Route} from "react-router-dom"
+
 export default function About(){
     return (
     
@@ -8,11 +8,10 @@ export default function About(){
     <form action="create">
     <input type="text" /><button type="Submit">Subscribe our Email</button> </form>
 
-<h3> ADIDAS AG World of Sports</h3>
-<h3> Adi-Dassler-Straße 1</h3>
-<h3> 91074 Herzogenaurach</h3>
-<h3> Germany</h3>
+    <h3> ADIDAS AG World of Sports</h3>
+    <h3> Adi-Dassler-Straße 1</h3>
+    <h3> 91074 Herzogenaurach</h3>
+    <h3> Germany</h3>
     </div>
-    )
-       
+    )  
 }
