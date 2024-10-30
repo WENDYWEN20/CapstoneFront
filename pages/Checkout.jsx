@@ -1,17 +1,18 @@
 import React, { useContext, useState } from 'react';
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+
 import { CartContext } from '../pages/CartContext.jsx';
 
-function CheckOut() {
-    const [paymentInfo, setPaymentInfo] = useState({
-        cardNumber: "",
-        expiryDate: "",
-        cvv: "",
-        cardholderName: ""
-      });
+function CheckOut({product}) {
+  const { cart } = useContext(CartContext);
+  console.log(cart)
+     // const [paymentInfo, setPaymentInfo] = useState({
+    //     cardNumber: "",
+    //     expiryDate: "",
+    //     cvv: "",
+    //     cardholderName: ""
+    //   });
 
-    console.log(product)
     return (
     <main> 
     <div key={product._id}>

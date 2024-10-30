@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import PropTypes from "prop-types";
+import {Link} from "react-router-dom"
 
 import { CartContext } from "../pages/CartContext.jsx";
 function Info() {
@@ -28,6 +28,8 @@ function Info() {
       <button onClick={() => addToCart(element)}>
          <strong>Add to Cart</strong>
       </button>
+      <hr />
+      <Link to="/products"> Show All Products</Link>
     </div>
   );
 }

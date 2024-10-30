@@ -35,7 +35,7 @@ function App() {
           <ProductDetails key={product._id} product={product} />
         ))}
       </div> */}
-      {/* <HomePage prod={productAPI}/> */}
+
       <Routes>
       <Route path="/"  element={<HomePage/>}  /> 
         <Route path="/products"  element={<ProductsPage prod={productAPI}/>}  /> 
