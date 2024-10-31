@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import ProductCart from "../pages/CartCheckOut.jsx";
+import StripeButton from "../pages/Stripe.jsx"
 import ProductInfo from "../pages/ProductInfo.jsx";
-import Users from "../pages/User.jsx";
+import UsersCard from "../pages/UsersCard.jsx";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "../components/NavBar.jsx";
 import FooterPage from "../components/Footer.jsx";
@@ -9,6 +10,7 @@ import About from "../components/About.jsx";
 import Return from "../components/Return.jsx";
 import HomePage from "../pages/HomePage.jsx";
 import ProductsPage from "../pages/ProductsPage.jsx"
+
 
 console.log(import.meta.env.VITE_API_BASE_URL);
 
@@ -41,7 +43,8 @@ function App() {
         <Route path="/products"  element={<ProductsPage prod={productAPI}/>}  /> 
         <Route path="/products/:id"  element={<ProductInfo/>}  /> 
         <Route path="/carts" element={<ProductCart />} />
-        <Route path="/checkout" element={<ProductCart />} />
+        <Route path="/create-checkout-session" element={<StripeButton />} />
+        <Route path="/checkout" element={<StripeButton />} />
         <Route path="/about" element={<About />} />
         <Route path="/return" element={<Return />} />
       </Routes>
